@@ -87,9 +87,9 @@ const ProposalsPage: React.FC = () => {
         // We'll load enough to show multiple pages
         const [proposalsResponse, canCreateResponse] = await Promise.all([
           apiFetch(
-            "http://localhost:8080/api/proposals/organization?limit=200&offset=0"
+            "https://serverrailway-production-e3c3.up.railway.app/api/proposals/organization?limit=200&offset=0"
           ),
-          apiFetch("http://localhost:8080/api/proposals/can-create"),
+          apiFetch("https://serverrailway-production-e3c3.up.railway.app/api/proposals/can-create"),
         ]);
 
         // Handle proposals response

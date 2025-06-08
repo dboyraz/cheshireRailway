@@ -129,7 +129,7 @@ const ProposalDetailPage: React.FC = () => {
         setError("");
 
         const response = await apiFetch(
-          "http://localhost:8080/api/user/profile"
+          "https://serverrailway-production-e3c3.up.railway.app/api/user/profile"
         );
 
         if (response.status === 404) {
