@@ -157,16 +157,16 @@ const StatusPage = () => {
 
       // Check other services in parallel
       const [authStatus, postgresStatus, redisStatus] = await Promise.all([
-        checkService("Auth System", "https://serverrailway-production-e3c3.up.railway.app//api/me"),
-        checkService("PostgreSQL", "https://serverrailway-production-e3c3.up.railway.app//api/status"),
-        checkService("Redis", "https://serverrailway-production-e3c3.up.railway.app//api/debug/redis"),
+        checkService("Auth System", "https://serverrailway-production-e3c3.up.railway.app/api/me"),
+        checkService("PostgreSQL", "https://serverrailway-production-e3c3.up.railway.app/api/status"),
+        checkService("Redis", "https://serverrailway-production-e3c3.up.railway.app/api/debug/redis"),
       ]);
 
       setServices([systemInfoService, authStatus, postgresStatus, redisStatus]);
 
       // Get system information
       try {
-        const statusResponse = await fetch("https://serverrailway-production-e3c3.up.railway.app//api/status");
+        const statusResponse = await fetch("https://serverrailway-production-e3c3.up.railway.app/api/status");
         if (statusResponse.ok) {
           const statusData = await statusResponse.json();
           setSystemInfo({
